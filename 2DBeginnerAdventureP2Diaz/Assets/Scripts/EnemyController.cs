@@ -10,6 +10,8 @@ public class nemyController : MonoBehaviour
 
     Rigidbody2D rigidbody2d;
 
+    bool broken;
+
     float timer;
     int direction = 1;
 
@@ -26,6 +28,11 @@ public class nemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!broken)
+        {
+            return;
+        }
+
         timer -= Time.deltaTime; ;
         if (timer < 0)
         {
